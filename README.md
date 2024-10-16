@@ -1,54 +1,54 @@
 # Custom JSON Parser
 
-## Description
-This project implements a custom JSON parser in Java. It provides functionality to parse JSON strings into Java objects, convert Java objects to JSON strings, and perform various JSON-related operations.
+## Описание
+Данный проект реализует пользовательский JSON-парсер на Java. Он предоставляет функциональность для разбора JSON-строк в объекты Java, преобразования объектов Java в JSON-строки и выполнения различных операций с JSON.
 
-## Features
-- Parse JSON strings to Java objects (JSONObject and JSONArray)
-- Convert JSON to Map<String, Object> and List<Object>
-- Parse JSON to specified Java classes
-- Serialize Java objects to JSON strings
-- Handle nested structures
-- Detect and throw exceptions for invalid JSON
+## Особенности
+- Парсинг JSON-строк в объекты Java (JSONObject и JSONArray)
+- Преобразование JSON в Map<String, Object> и List<Object>
+- Парсинг JSON в указанные Java-классы
+- Сериализация объектов Java в JSON-строки
+- Обработка вложенных структур
+- Обнаружение и генерация исключений для некорректного JSON
 
-## Main Components
+## Основные Компоненты
 
 ### JSONParser
-The core class responsible for parsing JSON strings. It includes methods for:
-- Parsing to JSONObject and JSONArray
-- Converting to Map and List
-- Parsing to specified classes
+Основной класс, отвечающий за парсинг JSON-строк. Включает методы для:
+- Парсинга в JSONObject и JSONArray
+- Преобразования в Map и List
+- Парсинга в указанные классы
 
 ### JSONObject
-Represents a JSON object. It implements the Map interface for easy manipulation.
+Представляет собой JSON-объект. Реализует интерфейс Map для удобной работы с данными.
 
 ### JSONArray
-Represents a JSON array. It implements the List interface for convenient access.
+Представляет собой JSON-массив. Реализует интерфейс List для удобного доступа к элементам.
 
 ### JSONException
-Custom exception class for JSON-related errors.
+Пользовательский класс исключений для ошибок, связанных с JSON.
 
 ### JSONSerializer
-Handles the serialization of Java objects to JSON strings.
+Отвечает за сериализацию объектов Java в JSON-строки.
 
-## Usage Examples
+## Примеры использования
 
-1. Parsing JSON to JSONObject:
+1. Парсинг JSON в JSONObject:
    `JSONObject obj = JSONParser.parseToJSONObject(jsonString);`
 
-2. Parsing JSON to Map:
+2. Парсинг JSON в Map:
    `Map<String, Object> map = JSONParser.parseToMap(jsonString);`
 
-3. Parsing JSON to a specific class:
+3. Парсинг JSON в указанный класс:
    `MyClass instance = JSONParser.parseToClass(jsonString, MyClass.class);`
 
-4. Serializing an object to JSON:
+4. Сериализация объекта в JSON:
    `String json = JSONSerializer.serialize(myObject);`
 
-More examples - in `Main.java`. 
+Больше примеров можно найти в файле Main.java. 
 
 <details>
-<summary>Click to see Main.java output</summary>
+<summary>Нажмите, чтобы увидеть вывод Main.java</summary>
 
 ```
 1. Parsing JSON to JSONObject:
@@ -97,7 +97,7 @@ Process finished with exit code 0
 
 </details>
 
-## Project Structure
+## Структура Проекта
 ```
 src/
 ├── main/
@@ -116,17 +116,17 @@ src/
 └── JSONParserTest.java
 ```
 
-## Testing
-The project includes a comprehensive test suite (JSONParserTest.java) covering various scenarios including:
-- Parsing valid JSON objects and arrays
-- Handling nested structures
-- Detecting invalid JSON (e.g., trailing commas)
-- Serialization of Java objects to JSON
+## Тестирование
+Проект включает в себя набор тестов (JSONParserTest.java), покрывающих различные сценарии, включая:
+- Парсинг корректных JSON-объектов и массивов
+- Обработку вложенных структур
+- Обнаружение некорректного JSON (например, запятые на конце)
+- Сериализацию объектов Java в JSON
 
-Testing results:
+Результаты тестирования:
 
 ![img.png](img.png)
 
-## Limitations
-- Does not handle all possible JSON escape sequences
-- May have limitations with very large JSON strings due to recursive parsing
+## Ограничения
+- Не поддерживаются все возможные escape-последовательности JSON
+- Могут быть ограничения при работе с очень большими JSON-строками из-за рекурсивного парсинга
